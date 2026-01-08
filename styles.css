@@ -35,7 +35,7 @@ body { background-color: var(--white); color: var(--dark); overflow-x: hidden; w
 .hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; }
 .tech-stack { display: flex; align-items: center; gap: 20px; border-top: 1px solid #ddd; padding-top: 25px; }
 .tech-stack p { font-weight: 700; border-right: 2px solid #ddd; padding-right: 20px; }
-.logos { display: flex; gap: 20px; font-size: 1.8rem; color: #555; }
+.logos { display: flex; gap: 20px; font-size: 1.8rem; color: #555;  }
 .blob-image {
     width: 380px; height: 380px;
     background-image: url('images/Tshepo.jpeg');
@@ -64,6 +64,12 @@ body { background-color: var(--white); color: var(--dark); overflow-x: hidden; w
 .badge { background: #eff6ff; color: var(--primary); padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
 .video-wrapper { border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 video { width: 100%; display: block; }
+.tech-stack-badges{
+  margin: 10px;
+}
+.project-text{
+  letter-spacing: 1px; 
+}
 
 /* --- Reusable Elements --- */
 .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; font-weight: 800; }
@@ -92,6 +98,11 @@ video { width: 100%; display: block; }
 .footer-bottom { text-align: center; padding-top: 30px; opacity: 0.5; font-size: 0.9rem; }
 
 /* --- Responsive Layout --- */
+.menu-toggle {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
 .menu-toggle { display: none; cursor: pointer; }
 .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background: var(--dark); transition: 0.3s; }
 
@@ -99,10 +110,28 @@ video { width: 100%; display: block; }
     .navbar { padding: 15px 25px; }
     .menu-toggle { display: block; }
     .nav-links {
-        position: fixed; top: -100%; left: 0; width: 100%; background: var(--white);
-        flex-direction: column; padding: 100px 0 50px; text-align: center; transition: 0.4s;
+        position: fixed; 
+        top: -100vh; /* Changed from -100% to -100vh to ensure it's fully off-screen */
+        left: 0; 
+        width: 100%; 
+        background: var(--white);
+        flex-direction: column; 
+        padding: 100px 0 50px; 
+        text-align: center; 
+        transition: 0.4s ease-in-out;
+        z-index: -1; /* Place it behind the main navbar bar */
+        opacity: 0;   /* Hide it visually */
     }
-    .nav-links.active { top: 0; }
+
+    .nav-links.active {
+        top: 0; 
+        opacity: 1;
+        z-index: 1000; /* Bring it to front when active */
+    }
+    
+    .nav-links li {
+        margin: 15px 0; /* Add spacing for mobile links */
+    }
     .hero-content { flex-direction: column; text-align: center; }
     .hero-text h1 { font-size: 2.5rem; }
     .blob-image { width: 300px; height: 300px; margin-top: 30px; }
@@ -110,6 +139,7 @@ video { width: 100%; display: block; }
     .footer-cta { display: flex; flex-direction: column; gap: 15px; }
     .cta-button.outline { margin-right: 0; }
     .project-media { order: -1; width: 100%; }
+    
 }
 
 .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
