@@ -27,7 +27,7 @@ body { background-color: var(--white); color: var(--dark); overflow-x: hidden; w
 .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.3s; }
 .nav-links a:hover { color: var(--primary); }
 
-/* --- Hero & Blob --- */
+/* Hero & Blob  */
 .hero { min-height: 100vh; display: flex; align-items: center; background-color: var(--light-bg); padding-top: 80px; }
 .hero-content { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
