@@ -35,7 +35,7 @@ body { background-color: var(--white); color: var(--dark); overflow-x: hidden; w
 .hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; }
 .tech-stack { display: flex; align-items: center; gap: 20px; border-top: 1px solid #ddd; padding-top: 25px; }
 .tech-stack p { font-weight: 700; border-right: 2px solid #ddd; padding-right: 20px; }
-.logos { display: flex; gap: 20px; font-size: 1.8rem; color: #555;  }
+.logos { display: flex; gap: 20px; font-size: 1.8rem; color: #555;  margin-bottom: 30px; }
 .blob-image {
     width: 380px; height: 380px;
     background-image: url('images/Tshepo.jpeg');
